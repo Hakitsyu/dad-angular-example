@@ -1,0 +1,16 @@
+<div class="status-container">
+    <div class="title">{{orderStatus.title}}</div>
+    <div 
+        cdkDropList
+        class="body"
+        [cdkDropListData]="orders"
+        [cdkDropListConnectedTo]="connectedTo"
+        (cdkDropListDropped)="drop($event)"
+        [id]="orderStatus.id.toString()"
+        >
+        <order 
+            *ngFor="let order of orders"
+            [order]="order">
+        </order>
+    </div>
+</div>

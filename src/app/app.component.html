@@ -1,0 +1,21 @@
+<div class="app">
+    <order-status-container 
+        *ngFor="let orderMemory of memory" 
+        [orderStatus]="orderMemory.status"
+        [orders]="orderMemory.orders"
+        [connectedTo]="connectedTo"
+        >
+    </order-status-container>
+</div>
+
+<!--
+<div class="app">
+    <order-status-container 
+        *ngFor="let orderStatus of orderStatusList" 
+        [orderStatus]="orderStatus"
+        [orders]="getOrders(orderStatus)"
+        [connectedTo]="connectedTo"
+        >
+    </order-status-container>
+</div>
+-->
