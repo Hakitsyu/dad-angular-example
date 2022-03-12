@@ -26,12 +26,14 @@ export class AppComponent implements OnInit {
   ngOnInit() {}
 
   initMemory() {
-    this.orderStatusList.map(orderStatus => {
-      return <OrdersMemory> {
+    this.orderStatusList.forEach(orderStatus => {
+      const memory = <OrdersMemory> {
         status: orderStatus,
         orders: this.filterOrderList(orderStatus)
       }
-    }).forEach(orderMemory => this.memory.push(orderMemory));
+
+      this.memory.push(memory);
+    });
   }
 
   filterOrderList(orderStatus: OrderStatus) {
